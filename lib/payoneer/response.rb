@@ -1,11 +1,11 @@
 module Payoneer
   class Response
-    attr_reader :code, :body
+    attr_reader :code, :body, :status
 
     OK_STATUS_CODE = '000'
 
     def self.new_ok_response(body)
-      new(OK_STATUS_CODE, body)
+      self.new(OK_STATUS_CODE, body)
     end
 
     def initialize(code, body)
