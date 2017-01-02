@@ -50,7 +50,7 @@ module Payoneer
       if success?
         Response.new_ok_response(@response)
       else
-        Response.new((@response['Code']), @response['Description'])
+        Response.new(@response['Code'], @response['Description'])
       end
     end
 
