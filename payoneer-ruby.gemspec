@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'rest-client'
   spec.add_dependency 'activesupport'
+  spec.add_dependency 'ox', '~> 2.4'
 
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'pry'

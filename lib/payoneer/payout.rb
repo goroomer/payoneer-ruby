@@ -46,7 +46,7 @@ module Payoneer
 
     private
 
-    def render_response
+    def self.render_response
       if success?
         Response.new_ok_response(@response)
       else
