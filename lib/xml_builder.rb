@@ -22,11 +22,11 @@ class XmlBuilder
     details << registration_mode
 
     first_name = Ox::Element.new('firstName')
-    first_name << @args[:user_first_name]
+    first_name << @args[:user_first_name].to_s.gsub('-', ' ')
     details << first_name
 
     last_name = Ox::Element.new('lastName')
-    last_name << @args[:user_last_name]
+    last_name << @args[:user_last_name].to_s.gsub('-', ' ')
     details << last_name
 
     address = Ox::Element.new('address1')

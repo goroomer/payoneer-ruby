@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9af7d308-ca41-44e5-9744-f93487b564c5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/payoneer/payee.rb" afterPath="$PROJECT_DIR$/lib/payoneer/payee.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/xml_builder.rb" afterPath="$PROJECT_DIR$/lib/xml_builder.rb" />
     </list>
     <ignored path="payoneer-ruby.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,7 +53,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="payee.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="payee.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/payoneer/payee.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="525">
@@ -83,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xml_builder.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="xml_builder.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/xml_builder.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+            <state relative-caret-position="420">
+              <caret line="28" column="59" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -108,9 +108,9 @@
         <option value="$PROJECT_DIR$/.ruby-version" />
         <option value="$PROJECT_DIR$/lib/payoneer/xml_builder.rb" />
         <option value="$PROJECT_DIR$/lib/payoneer/payout.rb" />
-        <option value="$PROJECT_DIR$/lib/xml_builder.rb" />
         <option value="$PROJECT_DIR$/lib/payoneer/version.rb" />
         <option value="$PROJECT_DIR$/lib/payoneer/payee.rb" />
+        <option value="$PROJECT_DIR$/lib/xml_builder.rb" />
       </list>
     </option>
   </component>
@@ -373,18 +373,18 @@
       <option name="presentableId" value="Default" />
       <updated>1482996862871</updated>
       <workItem from="1482996865142" duration="2188000" />
-      <workItem from="1483256745911" duration="24183000" />
+      <workItem from="1483256745911" duration="24871000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26371000" />
+    <option name="totallyTimeSpent" value="27059000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="23" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18697916" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18697916" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -563,14 +563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/xml_builder.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -615,6 +607,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/xml_builder.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="59" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
           <folding />
         </state>
       </provider>
