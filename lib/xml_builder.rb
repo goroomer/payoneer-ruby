@@ -37,13 +37,16 @@ class XmlBuilder
     city << @args[:user_city]
     details << city
 
+    country_code = @args[:user_country].to_s.upcase
     country = Ox::Element.new('country')
-    country << @args[:user_country]
+    country << country_code
     details << country
 
-    state = Ox::Element.new('state')
-    state << @args[:user_state]
-    details << state
+    if country_code == 'US'
+      state = Ox::Element.new('state')
+      state << @args[:user_state]
+      details << state
+    end
 
     zipcode = Ox::Element.new('zipCode')
     zipcode << @args[:user_zipcode]
@@ -53,7 +56,7 @@ class XmlBuilder
     phone << @args[:user_phone]
     details << phone
 
-    email = Ox::Element.new('Email')
+    email = Ox::Element.new('email')
     email << @args[:user_email]
     details << email
 
