@@ -22,11 +22,11 @@ class XmlBuilder
     details << registration_mode
 
     first_name = Ox::Element.new('firstName')
-    first_name << @args[:user_first_name].to_s.strip_special_characters
+    first_name << strip_special_characters(@args[:user_first_name].to_s)
     details << first_name
 
     last_name = Ox::Element.new('lastName')
-    last_name << @args[:user_last_name].to_s.strip_special_characters
+    last_name << strip_special_characters(@args[:user_last_name].to_s)
     details << last_name
 
     address = Ox::Element.new('address1')
@@ -79,5 +79,11 @@ class XmlBuilder
     details << transfer_method
 
     "<?xml version=\"1.0\" encoding=\"utf-8\"?>#{Ox.dump(@xml)}"
+  end
+
+  private
+
+  def strip_special_characters(value)
+    value.gsub('-', ' ').gsub('&', '').gsub('.', '').gsub('/', '')
   end
 end
