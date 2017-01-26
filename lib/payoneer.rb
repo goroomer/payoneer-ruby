@@ -30,6 +30,7 @@ module Payoneer
 
     request_params = default_params.merge(mname: method_name).merge(params)
 
+    set_proxy
     response = RestClient.post(configuration.api_url, request_params)
 
     fail Errors::UnexpectedResponseError.new(response.code, response.body) unless response.code == 200
@@ -49,5 +50,11 @@ module Payoneer
       p2: configuration.partner_api_password,
       p3: configuration.partner_id,
     }
+  end
+
+  private
+
+  def self.set_proxy
+    RestClient.proxy = ENV['HTTP_PROXY_URL'] if Rails.env.production? && ENV['HTTP_PROXY_URL'].present?
   end
 end
