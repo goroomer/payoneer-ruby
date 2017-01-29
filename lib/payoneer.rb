@@ -1,6 +1,6 @@
 #Payoneer Ruby bindings
 #API spec at https://github.com/teespring/payoneer-ruby
-require 'rest-client'
+require 'httparty'
 require 'active_support'
 require 'active_support/core_ext'
 
@@ -21,6 +21,8 @@ require 'payoneer/errors/unexpected_response_error'
 require 'payoneer/errors/configuration_error'
 
 module Payoneer
+  include HTTParty
+
   def self.configure
     yield(configuration)
   end
@@ -31,7 +33,8 @@ module Payoneer
     request_params = default_params.merge(mname: method_name).merge(params)
 
     set_proxy
-    response = RestClient.post(configuration.api_url, request_params)
+    response = HTTParty.post(configuration.api_url,
+                             body: request_params)
 
     fail Errors::UnexpectedResponseError.new(response.code, response.body) unless response.code == 200
 
@@ -55,6 +58,9 @@ module Payoneer
   private
 
   def self.set_proxy
-    RestClient.proxy = ENV['HTTP_PROXY_URL'] if Rails.env.production? && ENV['HTTP_PROXY_URL'].present?
+    if Rails.env.production? && ENV['HTTP_PROXY_URL'].present?
+      proxy = URI.parse(ENV['HTTP_PROXY_URL'].to_s)
+      http_proxy proxy.host, proxy.port, proxy.user, proxy.password
+    end
   end
 end
