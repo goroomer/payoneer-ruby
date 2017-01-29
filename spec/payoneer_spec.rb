@@ -16,7 +16,7 @@ describe Payoneer do
 
     context 'when the response is unsuccessful' do
       before do
-        allow(RestClient).to receive(:post) { double(code: 500, body: '') }
+        allow(HTTParty).to receive(:post) { double(code: 500, body: '') }
       end
 
       it 'raises and UnexpectedResponseError if a response code other than 200 is returned' do
@@ -47,7 +47,7 @@ describe Payoneer do
       }
 
       before do
-        allow(RestClient).to receive(:post) { double(code: 200, body: xml_response) }
+        allow(HTTParty).to receive(:post) { double(code: 200, body: xml_response) }
       end
 
       it 'returns a hash from the Payoneer xml response' do
