@@ -32,9 +32,8 @@ module Payoneer
 
     request_params = default_params.merge(mname: method_name).merge(params)
 
-
-    response = HTTParty.post(configuration.api_url,
-                             proxy_attributes.merge(body: request_params))
+    set_proxy
+    response = post(configuration.api_url, body: request_params)
 
     fail Errors::UnexpectedResponseError.new(response.code, response.body) unless response.code == 200
 
@@ -57,15 +56,10 @@ module Payoneer
 
   private
 
-  def self.proxy_attributes
-    {}.tap do |elem|
-      if Rails.env.production? && ENV['HTTP_PROXY_URL'].present?
-        proxy = URI.parse(ENV['HTTP_PROXY_URL'].to_s)
-        elem[:http_proxyaddr] = proxy.host
-        elem[:http_proxyport] = proxy.port
-        elem[:http_proxyuser] = proxy.user
-        elem[:http_proxypass] = proxy.password
-      end
+  def self.set_proxy
+    if Rails.env.production? && ENV['HTTP_PROXY_URL'].present?
+      proxy = URI.parse(ENV['HTTP_PROXY_URL'].to_s)
+      http_proxy proxy.host, proxy.port, proxy.user, proxy.password
     end
   end
 end
